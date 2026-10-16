@@ -1,0 +1,242 @@
+/* Universal Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-dark: #0f172a;
+    --card-bg: #ffffff;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+body {
+    background-color: #f8fafc;
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Authentication Styling */
+.auth-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    padding: 20px;
+}
+
+.auth-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.auth-card h2 {
+    color: var(--bg-dark);
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+.auth-card p {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.auth-switch span {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* App / Dashboard Layout */
+.app-header {
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.app-content {
+    max-width: 900px;
+    margin: 40px auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.search-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.search-section h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: var(--bg-dark);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 24px auto 0 auto;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.search-box button {
+    width: auto;
+    padding: 0 24px;
+}
+
+.error-text {
+    color: #dc2626;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+/* Country Display Card */
+.country-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.country-flag img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.country-details h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: var(--bg-dark);
+}
+
+.info-item {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.info-item strong {
+    color: var(--text-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 600px) {
+    .country-card {
+        grid-template-columns: 1fr;
+    }
+    .app-header {
+        padding: 16px 20px;
+    }
+}
